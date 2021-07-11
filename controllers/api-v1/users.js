@@ -4,6 +4,59 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const authLockedRoute = require('./authLockedRoute.js')
 
+
+// GET for '/'
+// router.get('/', (req, res) => {
+//     res.json({ msg: 'Hi! I am the user endpoint! 👋'})
+// })
+
+// Post stub (Register?)
+// router.post('', (req, res) => {
+//     try {
+
+//     } catch(err) {
+//         console.log(err)
+//         //res.status code
+//     }
+// })
+
+// POST stub (Login?)
+// router.post('', (req, res) => {
+//     try {
+
+//     } catch(err) {
+//         console.log(err)
+//         //res.status code
+//     }
+// })
+
+// PUT Stub (Can be moved)
+// router.put('', (req, res) => {
+//     try {
+
+//     } catch(err) {
+//         console.log(err)
+//         //res.status code
+//     }
+// })
+
+// Delete Stub (Can be moved)
+// router.destroy('', (req, res) => {
+//     try {
+
+//     } catch(err) {
+//         console.log(err)
+//         //res.status code
+//     }
+// })
+
+// Get for authorized route (Profile?)
+router.get('/', (req, res) => {
+    // Sends private data
+    res.json({ msg: 'Hi! I am your profile 👋'})
+})
+
+
 //get /users == test api endpoint
 router.get('/', (req, res) => {
     res.json({msg: 'hi! the user endpoint is ok'})
