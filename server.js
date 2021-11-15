@@ -16,13 +16,14 @@ app.use(cors())
 //body parser middleware
 app.use(express.urlencoded({extended: false}))
 app.use(express.json()) // for the request body
-app.use('/api-v1/users', require('./controllers/api-v1/users.js'))
 //custom middleware
 app.use((req, res, next) => {
     console.log(`incoming request on ${req.method} ${req.url}`)
     res.locals.anything = '🚀'
     next()
 })
+
+app.use('/api-v1/users', require('./controllers/api-v1/users.js'))//controllers
 
 const middleWare = (req,res, next) => {
     console.log('I am a route specific middleware! 👾')

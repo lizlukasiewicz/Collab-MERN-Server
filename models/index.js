@@ -6,9 +6,7 @@ const connect = () => {
 
     mongoose.connect(MONGODB_URI, {
         useNewUrlParser: true,
-        useFindAndModify: false,
-        useUnifiedTopology: true,
-        useCreateIndex: true
+        useUnifiedTopology: true
     })
 
     const db = mongoose.connection
@@ -23,6 +21,8 @@ const connect = () => {
     })
 }
 //export the connection function and models
+//useFindAndModify: false,
+//useCreateIndex: true
 
 module.exports = {
     connect,

@@ -4,58 +4,10 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const authLockedRoute = require('./authLockedRoute.js')
 
-
-// GET for '/'
 // router.get('/', (req, res) => {
-//     res.json({ msg: 'Hi! I am the user endpoint! 👋'})
+//     // Sends private data
+//     res.json({ msg: 'Hi! I am your profile 👋'})
 // })
-
-// Post stub (Register?)
-// router.post('', (req, res) => {
-//     try {
-
-//     } catch(err) {
-//         console.log(err)
-//         //res.status code
-//     }
-// })
-
-// POST stub (Login?)
-// router.post('', (req, res) => {
-//     try {
-
-//     } catch(err) {
-//         console.log(err)
-//         //res.status code
-//     }
-// })
-
-// PUT Stub (Can be moved)
-// router.put('', (req, res) => {
-//     try {
-
-//     } catch(err) {
-//         console.log(err)
-//         //res.status code
-//     }
-// })
-
-// Delete Stub (Can be moved)
-// router.destroy('', (req, res) => {
-//     try {
-
-//     } catch(err) {
-//         console.log(err)
-//         //res.status code
-//     }
-// })
-
-// Get for authorized route (Profile?)
-router.get('/', (req, res) => {
-    // Sends private data
-    res.json({ msg: 'Hi! I am your profile 👋'})
-})
-
 
 //get /users == test api endpoint
 router.get('/', (req, res) => {
@@ -70,8 +22,8 @@ router.post('/register', async (req, res) => {
             email: req.body.email
         })
         //if the user is found, don't let them register
-        if(findUser) return res.status(400).json({ msg: 'user already exists in the DB'})
-        console.log(findUser)
+        if(findUser) return res.status(400).json({ msg: 'user already exists'})
+        //console.log(findUser)
         //hash password from req.body
         const password = req.body.password
         const salt = 12
